@@ -1,17 +1,7 @@
-#import numpy as np
-#import pandas as pd
 import cv2
-#import random
-#import math
 
  
 img = cv2.imread('C:\\Users\\INKOM06\\Pictures\\jagung2020\\0304\\mod.bmp',1)
-#cv2.imshow('Original image',img)
-
-
-print("Done!")
-
-
 
 ic = 200
 jc = 180
@@ -69,7 +59,6 @@ iBot = iBot + 10
 jLft = jLft - 10
 jRgt = jRgt + 10
 
-
 # Drawing coordinate (j,i) 
 color = (0, 255, 0) 
 thickness = 1
@@ -86,40 +75,23 @@ ep.append([400, iBot])
 ep.append([jLft, 400])
 ep.append([jRgt, 400])
 
-
-
 for i in range(0,2):
 	start_point = tuple(sp[i]) 
 	end_point = tuple(ep[i]) 
 	img = cv2.line(img, start_point, end_point, color, thickness) 
 
+	start_point = tuple(sp[i+2]) 
+	end_point = tuple(ep[i+2]) 
+	img = cv2.line(img, start_point, end_point, color, thickness) 
 
+'''
 for i in range(2,4):
 	start_point = tuple(sp[i]) 
 	end_point = tuple(ep[i]) 
 	img = cv2.line(img, start_point, end_point, color, thickness) 
-
-
-
 '''
-start_point = (0, iTop) 
-end_point = (400, iTop) 
-img = cv2.line(img, start_point, end_point, color, thickness) 
 
-start_point = (0, iBot) 
-end_point = (400, iBot) 
-img = cv2.line(img, start_point, end_point, color, thickness) 
 
-start_point = (jLft, 0) 
-end_point = (jLft, 400)
-print(type(start_point)) 
-img = cv2.line(img, start_point, end_point, color, thickness) 
-
-start_point = (jRgt, 0) 
-end_point = (jRgt, 400) 
-img = cv2.line(img, start_point, end_point, color, thickness) 
-
-'''
 cv2.imshow("Centroid ", img)
 
 
