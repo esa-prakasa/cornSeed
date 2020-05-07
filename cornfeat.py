@@ -81,9 +81,11 @@ def getRadiusAndAngle(i,j,iC,jC):
 
 
 
-path = "C:\\Users\\INKOM06\\Pictures\\jagung2020\\largeDataSet\\true\\"
+path = "C:\\Users\\INKOM06\\Pictures\\jagung2020\\largeDataSet\\truet\\"
 path = "C:\\Users\\INKOM06\\Pictures\\jagung2020\\largeDataSet\\model\\"
 path = "C:\\Users\\INKOM06\\Pictures\\jagung2020\\largeDataSet\\false\\"
+
+subFoldPath = path[-6:-1]
 
 #path = "C:\\Users\\INKOM06\\Pictures\\jagung2020\\largeDataSet\\"
 
@@ -214,39 +216,18 @@ axs[1].set_title('Boundary profile: Radius vs. Degree')
 axs[1].axis([0, yMax, 0, 300])
 axs[1].plot(degArr,radArr, 'r.')
 
-#plt.show()
+plt.show()
 
 
 pathToSave = "C:\\Users\\INKOM06\\Documents\\[0--KEGIATAN-Ku-2020\\2020.02-011-IDENTIFIKASI Jagung 2020\\Eksperimen Feature Extraction\\figures\\"
 
-figPath = pathToSave+"fig_"+fileList[imgIdx]
+figPath = pathToSave+subFoldPath+"\\fig_"+fileList[imgIdx]
 print(figPath)
-fig.savefig(figPath, dpi=fig.dpi)
+#fig.savefig(figPath, dpi=fig.dpi)
 
 
 
 
-'''
-plt.figure(figsize=(9, 3))
-
-plt.imshow(imgBW)
-plt.plot(degArr,radArr, 'ro')
-plt.subplot(122)
-plt.plot(degArr,radArr, 'ro')
-plt.suptitle('Categorical Plotting')
-plt.show()
-'''
-
-
-#plt.axis([0, M, 0, 20])
-#plt.show()
-
-
-
-
-#plt.plot([1, 2, 3, 4])
-#plt.ylabel('some numbers')
-#plt.show()
 
 
 cv2.waitKey(0)
