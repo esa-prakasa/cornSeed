@@ -1,11 +1,9 @@
 import cv2
-
  
 img = cv2.imread('C:\\Users\\INKOM06\\Pictures\\jagung2020\\0304\\mod.bmp',1)
 
 ic = 200
 jc = 180
-
 
 def findHZLine(ic, jc, vcRg, hzRg, d):
 	val = 1e3
