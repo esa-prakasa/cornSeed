@@ -3,6 +3,7 @@ import os
 import numpy as np
 import math
 
+# To clear the screen
 os.system("cls")
 
 def getAvgIntensity(img, i0, j0, fSz):
